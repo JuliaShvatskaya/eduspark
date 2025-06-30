@@ -65,7 +65,7 @@ export default function ChildDashboard() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-      <Header>
+      <Header title="Child Dashboard">
         <div className="flex items-center space-x-4">
           <div className="flex items-center space-x-2">
             <span className="text-2xl">{user.avatar}</span>
