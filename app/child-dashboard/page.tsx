@@ -167,48 +167,51 @@ export default function ChildDashboard() {
         >
           <h3 className="text-2xl font-bold text-gray-800 mb-6">Choose Your Adventure</h3>
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-			{learningModules.map((module, index) => (
-			  <motion.div
-				key={module.id}
-				initial={{ opacity: 0, y: 20 }}
-				animate={{ opacity: 1, y: 0 }}
-				transition={{ delay: 0.3 + index * 0.1 }}
-				onHoverStart={() => setHoveredModule(index)}
-				onHoverEnd={() => setHoveredModule(null)}
-			  >
-				<Link href={module.href}>
-				  <Card className={`h-full hover:shadow-xl transition-all duration-300 border-0 ${module.bgColor} overflow-hidden cursor-pointer`}>
-					<CardHeader className="relative">
-					  <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${module.color} mx-auto mb-4 flex items-center justify-center transform transition-transform duration-300 ${hoveredModule === index ? 'scale-110' : ''}`}>
-						<module.icon className="w-8 h-8 text-white" />
-					  </div>
-					  <CardTitle className="text-xl font-bold text-gray-800 text-center">
-						{module.title}
-					  </CardTitle>
-					  <p className="text-gray-600 text-center text-sm">
-						{module.description}
-					  </p>
-					</CardHeader>
-					<CardContent className="space-y-4">
-					  <div>
-						<div className="flex justify-between mb-2">
-						  <span className="text-sm font-medium">Progress</span>
-						  <span className="text-sm text-gray-600">{module.progress}%</span>
-						</div>
-						<Progress value={module.progress} className="h-2" />
-					  </div>
-					  <div className="text-center">
-						<p className="text-sm text-gray-600 mb-3">Next: {module.nextActivity}</p>
-						<Button className={`bg-gradient-to-r ${module.color} hover:opacity-90 w-full`}>
-						  <Play className="w-4 h-4 mr-2" />
-						  Play Now
-						</Button>
-					  </div>
-					</CardContent>
-				  </Card>
-				</Link>
-			  </motion.div>
-			))}
+            {learningModules.map((module, index) => {
+              const Icon = module.icon;
+              return (
+                <motion.div
+                  key={module.id}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={{ opacity: 1, y: 0 }}
+                  transition={{ delay: 0.3 + index * 0.1 }}
+                  onHoverStart={() => setHoveredModule(index)}
+                  onHoverEnd={() => setHoveredModule(null)}
+                >
+                  <Link href={module.href}>
+                    <Card className={`h-full hover:shadow-xl transition-all duration-300 border-0 ${module.bgColor} overflow-hidden cursor-pointer`}>
+                      <CardHeader className="relative">
+                        <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${module.color} mx-auto mb-4 flex items-center justify-center transform transition-transform duration-300 ${hoveredModule === index ? 'scale-110' : ''}`}>
+                          <Icon className="w-8 h-8 text-white" />
+                        </div>
+                        <CardTitle className="text-xl font-bold text-gray-800 text-center">
+                          {module.title}
+                        </CardTitle>
+                        <p className="text-gray-600 text-center text-sm">
+                          {module.description}
+                        </p>
+                      </CardHeader>
+                      <CardContent className="space-y-4">
+                        <div>
+                          <div className="flex justify-between mb-2">
+                            <span className="text-sm font-medium">Progress</span>
+                            <span className="text-sm text-gray-600">{module.progress}%</span>
+                          </div>
+                          <Progress value={module.progress} className="h-2" />
+                        </div>
+                        <div className="text-center">
+                          <p className="text-sm text-gray-600 mb-3">Next: {module.nextActivity}</p>
+                          <Button className={`bg-gradient-to-r ${module.color} hover:opacity-90 w-full`}>
+                            <Play className="w-4 h-4 mr-2" />
+                            Play Now
+                          </Button>
+                        </div>
+                      </CardContent>
+                    </Card>
+                  </Link>
+                </motion.div>
+              );
+            })}
           </div>
         </motion.div>
 
@@ -223,7 +226,7 @@ export default function ChildDashboard() {
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
                 <Star className="w-5 h-5" />
-                <span>Today&apos;s Special Challenge</span>
+                <span>Today's Special Challenge</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
