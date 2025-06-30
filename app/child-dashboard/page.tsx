@@ -93,7 +93,6 @@ export default function ChildDashboard() {
           </div>
         </motion.div>
 
-      </div>
     </div>
   );
 }
