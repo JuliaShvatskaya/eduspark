@@ -440,7 +440,7 @@ export default function WordBuilder() {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
-      {showConfetti && showConfetti}
+      {showConfetti && <Confetti />}
       
       {/* Header */}
       <header className="bg-white/80 backdrop-blur-sm border-b sticky top-0 z-50">
