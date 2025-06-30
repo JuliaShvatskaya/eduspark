@@ -226,7 +226,7 @@ export default function ChildDashboard() {
             <CardHeader>
               <CardTitle className="flex items-center space-x-2">
                 <Star className="w-5 h-5" />
-                <span>Today's Special Challenge</span>
+                <span>Today&apos;s Special Challenge</span>
               </CardTitle>
             </CardHeader>
             <CardContent>
