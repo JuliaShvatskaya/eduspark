@@ -6,21 +6,18 @@ import { Button } from '@/components/ui/button';
 import { Card, CardContent, CardHeader, CardTitle } from '@/components/ui/card';
 import { Progress } from '@/components/ui/progress';
 import { Badge } from '@/components/ui/badge';
-import {  
-  Brain, 
-  Zap, 
-  Star, 
-  Trophy, 
+import {
+  Brain,
+  Zap,
+  Star,
+  Trophy,
   Play,
-  Home,
-  Settings,
   User,
   BookOpen
 } from 'lucide-react';
 import Link from 'next/link';
 import { useUser } from '@/providers/UserProvider';
 import { Header } from '@/components/ui/header';
-import Image from 'next/image';
 
 export default function ChildDashboard() {
   const { user } = useUser();
@@ -67,7 +64,6 @@ export default function ChildDashboard() {
   }
 
   return (
-    <>
     <div className="min-h-screen bg-gradient-to-br from-blue-50 via-purple-50 to-pink-50">
       <Header>
         <div className="flex items-center space-x-4">
@@ -180,8 +176,8 @@ export default function ChildDashboard() {
                 onHoverStart={() => setHoveredModule(index)}
                 onHoverEnd={() => setHoveredModule(null)}
               >
-                <Link href={module.href}>
-                <Card className={`h-full hover:shadow-xl transition-all duration-300 border-0 ${module.bgColor} overflow-hidden cursor-pointer`}>
+                <Link href={module.href} className="block h-full">
+                  <Card className={`h-full hover:shadow-xl transition-all duration-300 border-0 ${module.bgColor} overflow-hidden cursor-pointer`}>
                     <CardHeader className="relative">
                       <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${module.color} mx-auto mb-4 flex items-center justify-center transform transition-transform duration-300 ${hoveredModule === index ? 'scale-110' : ''}`}>
                         <module.icon className="w-8 h-8 text-white" />
@@ -209,14 +205,13 @@ export default function ChildDashboard() {
                         </Button>
                       </div>
                     </CardContent>
-                </Card>
-                  </Link>                  
+                  </Card>
+                </Link>
               </motion.div>
             ))}
           </div>
         </motion.div>
 
-          
         {/* Daily Challenge */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -247,6 +242,5 @@ export default function ChildDashboard() {
         </motion.div>
       </div>
     </div>
-    </>
   );
 }
