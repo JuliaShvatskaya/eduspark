@@ -176,8 +176,8 @@ export default function ChildDashboard() {
                 onHoverStart={() => setHoveredModule(index)}
                 onHoverEnd={() => setHoveredModule(null)}
               >
-                <Link href={module.href} className="block h-full">
-                  <Card className={`h-full hover:shadow-xl transition-all duration-300 border-0 ${module.bgColor} overflow-hidden cursor-pointer`}>
+                <Card className={`h-full hover:shadow-xl transition-all duration-300 border-0 ${module.bgColor} overflow-hidden cursor-pointer`}>
+                  <Link href={module.href} className="block h-full">
                     <CardHeader className="relative">
                       <div className={`w-16 h-16 rounded-full bg-gradient-to-r ${module.color} mx-auto mb-4 flex items-center justify-center transform transition-transform duration-300 ${hoveredModule === index ? 'scale-110' : ''}`}>
                         <module.icon className="w-8 h-8 text-white" />
@@ -205,8 +205,8 @@ export default function ChildDashboard() {
                         </Button>
                       </div>
                     </CardContent>
-                  </Card>
-                </Link>
+                  </Link>
+                </Card>
               </motion.div>
             ))}
           </div>
