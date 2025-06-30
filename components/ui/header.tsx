@@ -1,46 +1,58 @@
 'use client';
 
+import React from 'react';
 import Link from 'next/link';
-import { Button } from '@/components/ui/button';
-import { Home } from 'lucide-react';
 import Image from 'next/image';
+import { cn } from '@/lib/utils';
 
 interface HeaderProps {
   title?: string;
-  showNavigation?: boolean;
   children?: React.ReactNode;
+  showNavigation?: boolean;
 }
 
-export function Header({ title = "EduSpark", showNavigation = true, children }: HeaderProps) {
+export function Header({ title, children, showNavigation = true }: HeaderProps) {
   return (
     <header className="bg-white/80 backdrop-blur-sm border-b sticky top-0 z-50">
       <div className="container mx-auto px-4 py-4">
         <div className="flex items-center justify-between">
           <div className="flex items-center space-x-4">
-            {showNavigation && (
-              <Link href="/">
-                <Button variant="ghost" size="sm">
-                  <Home className="w-4 h-4 mr-2" />
-                  Home
-                </Button>
-              </Link>
+            {title && (
+              <h1 className="text-xl font-bold text-gray-800">{title}</h1>
             )}
-            <div className="flex items-center space-x-2">
-              <div className="w-8 h-8 bg-gradient-to-br from-blue-500 to-purple-600 rounded-lg flex items-center justify-center">
-                <Image 
-                  src="/eduspark-logo.png" 
-                  alt="EduSpark Logo" 
-                  width={24} 
-                  height={24} 
-                  className="object-contain"
-                />
-              </div>
-              <h1 className="text-2xl font-bold bg-gradient-to-r from-blue-600 to-purple-600 bg-clip-text text-transparent">
-                {title}
-              </h1>
+            {showNavigation && (
+              <nav className="hidden md:flex space-x-4">
+                <Link href="/" className="text-gray-600 hover:text-gray-900">
+                  Home
+                </Link>
+                <Link href="/child-dashboard" className="text-gray-600 hover:text-gray-900">
+                  Dashboard
+                </Link>
+                <Link href="/modules/reading" className="text-gray-600 hover:text-gray-900">
+                  Reading
+                </Link>
+                <Link href="/modules/attention" className="text-gray-600 hover:text-gray-900">
+                  Attention
+                </Link>
+                <Link href="/modules/speed-reading" className="text-gray-600 hover:text-gray-900">
+                  Speed Reading
+                </Link>
+              </nav>
+            )}
+          </div>
+          
+          <div className="flex items-center space-x-4">
+            {children}
+            <div className="relative w-8 h-8">
+              <Image 
+                src="/black_circle_360x360.png" 
+                alt="Logo" 
+                width={32} 
+                height={32} 
+                className="object-contain"
+              />
             </div>
           </div>
-          {children}
         </div>
       </div>
     </header>
