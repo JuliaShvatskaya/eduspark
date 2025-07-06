@@ -31,7 +31,9 @@ import {
   Gamepad2,
   BookMarked,
   MessageCircle,
-  PenTool
+  PenTool,
+  Check,
+  BarChart3
 } from 'lucide-react';
 import Link from 'next/link';
 import { useUser } from '@/providers/UserProvider';
