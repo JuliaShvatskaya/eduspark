@@ -195,7 +195,7 @@ export default function ChildDashboard() {
     {
       id: 'notif-2',
       title: 'Daily Streak',
-      description: 'You're on a 7-day streak!',
+      description: 'You\'re on a 7-day streak!',
       time: 'Today',
       read: false
     },
