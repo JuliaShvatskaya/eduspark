@@ -18,6 +18,7 @@ import {
 import Link from 'next/link';
 import { useUser } from '@/providers/UserProvider';
 import { Header } from '@/components/ui/header';
+import { cn } from '@/lib/utils';
 
 export default function ChildDashboard() {
   const { user } = useUser();
