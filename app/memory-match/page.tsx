@@ -31,6 +31,7 @@ import Link from 'next/link';
 import { useUser } from '@/providers/UserProvider';
 import { toast } from 'sonner';
 import Confetti from 'react-confetti';
+import { cn } from '@/lib/utils';
 
 interface GameCard {
   id: number;

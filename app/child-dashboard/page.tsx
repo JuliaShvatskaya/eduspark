@@ -179,7 +179,7 @@ export default function ChildDashboard() {
                   onHoverEnd={() => setHoveredModule(null)}
                 >
                   <Link href={module.href}>
-                    <Card className={`h-full hover:shadow-xl transition-all duration-300 border-0 overflow-hidden bg-${module.bgColor}`}>
+                    <Card className={`h-full hover:shadow-xl transition-all duration-300 border-0 overflow-hidden ${module.bgColor}`}>
                       <CardHeader className="pb-2">
                         <div className="flex items-center justify-between">
                           <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${module.color} flex items-center justify-center`}>
