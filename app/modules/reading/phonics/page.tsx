@@ -234,7 +234,7 @@ export default function PhonicsGame() {
   if (gameComplete) {
     return (
       <div className="min-h-screen bg-gradient-to-br from-green-50 via-white to-blue-50 flex items-center justify-center">
-        {showConfetti && showConfetti}
+        {showConfetti && <Confetti />}
         <Card className="max-w-md mx-auto text-center bg-white/90 backdrop-blur-sm border-0 shadow-xl">
           <CardHeader>
             <div className="w-20 h-20 bg-gradient-to-br from-green-500 to-blue-600 rounded-full mx-auto mb-4 flex items-center justify-center">
