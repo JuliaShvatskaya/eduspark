@@ -179,6 +179,34 @@ export default function ChildDashboard() {
                   onHoverEnd={() => setHoveredModule(null)}
                 >
                   <Link href={module.href}>
+                    <Card className={`h-full hover:shadow-xl transition-all duration-300 border-0 overflow-hidden bg-${module.bgColor}`}>
+                      <CardHeader className="pb-2">
+                        <div className="flex items-center justify-between">
+                          <div className={`w-12 h-12 rounded-lg bg-gradient-to-br ${module.color} flex items-center justify-center`}>
+                            <module.icon className="w-6 h-6 text-white" />
+                          </div>
+                          <Badge variant="outline" className="bg-white/50 text-gray-700">
+                            {module.progress}%
+                          </Badge>
+                        </div>
+                        <CardTitle className="text-lg font-bold mt-3 text-gray-800">
+                          {module.title}
+                        </CardTitle>
+                        <p className="text-sm text-gray-600">{module.description}</p>
+                      </CardHeader>
+                      <CardContent>
+                        <div className="space-y-3">
+                          <Progress value={module.progress} className="h-2" />
+                          <div className="flex items-center justify-between text-sm">
+                            <span className="text-gray-600">Next: {module.nextActivity}</span>
+                            <Button size="sm" className="bg-white text-gray-800 hover:bg-gray-100">
+                              <Play className="w-3 h-3 mr-1" />
+                              Continue
+                            </Button>
+                          </div>
+                        </div>
+                      </CardContent>
+                    </Card>
                   </Link>
                 </motion.div>
               );
