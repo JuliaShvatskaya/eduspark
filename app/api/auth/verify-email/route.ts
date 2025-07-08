@@ -5,7 +5,7 @@ import { sendEmail, createWelcomeTemplate } from '@/lib/email';
 
 export async function GET(request: NextRequest) {
   try {
-    const { searchParams } = new URL(request.url);
+    const { searchParams } = request.nextUrl;
     const token = searchParams.get('token');
 
     if (!token) {
@@ -50,7 +50,7 @@ export async function GET(request: NextRequest) {
 
     // Redirect to success page
     return NextResponse.redirect(
-      new URL('/auth/email-verified', request.url)
+      new URL('/auth/email-verified', request.nextUrl.origin)
     );
 
   } catch (error) {
