@@ -3,6 +3,8 @@ import { verifyToken } from '@/lib/auth';
 import { verifyUserEmail } from '@/lib/database';
 import { sendEmail, createWelcomeTemplate } from '@/lib/email';
 
+export const dynamic = 'force-dynamic';
+
 export async function GET(request: NextRequest) {
   try {
     const { searchParams } = request.nextUrl;
